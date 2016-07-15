@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular ~ PostgreSQL</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="scripts/todo.module.js"></script>
+    <script src="scripts/MainController.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <h1>Angular ~ PostgreSQL</h1>
+    <input type="text" ng-model="main.tempTask" />
+    <button ng-click="main.saveTask()">Save</button>
+  </body>
+</html>
