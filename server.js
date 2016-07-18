@@ -10,8 +10,6 @@ var config = {
   port: 5432
 };
 
-var client = new pg.Client(config);
-
 //Allow files to be fetched from HTML
 app.use(express.static('public'));
 //Allows a request.body to be posted
@@ -20,6 +18,7 @@ app.use(bodyParser.json());
 app.use('/', index);
 
 app.post('/addTask', function(request, response){
+  var client = new pg.Client(config);
   console.log(request.body);
   var taskDesc = request.body.task;
   client.connect(function(err){
